@@ -1,0 +1,12 @@
+<h1>Produk Baru Anda Aktif!</h1>
+<p>Berikut ini adalah produk yang baru saja Anda tambahkan:</p>
+<p><strong>Nama Produk:</strong> <%= @product.name %></p>
+<p><strong>Harga:</strong> <%= @product.price %></p>
+<p><strong>Kategori:</strong> <%= @product.category %></p>
+<p><strong>Status Aktif:</strong> <%= @product.is_active %></p>
+<p><strong>Gambar Produk:</strong></p>
+<% if @product.image.attached? %>
+  <%= image_tag @product.image.variant(resize_to_limit: [100, nil]), alt: 'Product Image' %>
+<% else %>
+  <p>No image available</p>
+<% end %>
